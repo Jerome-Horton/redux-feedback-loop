@@ -30,14 +30,14 @@ function Support (){
 
 
         <div>
-        <h1>How well are you being Supported?</h1>
+        <h1>Do you feel Supported?</h1>
         <h4> Please select from 0 to 5 </h4>
-        <p>Zero (0) = "I am not!"</p>
-        <p>One (1) = "Barely"</p>
-        <p>Two (2) = "To an extent"</p>
-        <p>Three (3) = "Somewhat Supported"</p>
-        <p>Four (4) = "I feel supported"</p>
-        <p>Five (5) = "Extremely Supported"</p>
+        <p>Zero (0) = "I Am Not!"</p>
+        <p>Zero (1) = "Strongly Disagree!"</p>
+        <p>One (2) = "Disagree"</p>
+        <p>Two (3) = "Neutral"</p>
+        <p>Three (4) = "Agree"</p>
+        <p>Four (5) = "Strongly Agree"</p>
         <input className='input'
             type="number"
             min={0}

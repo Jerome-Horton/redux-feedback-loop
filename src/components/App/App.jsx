@@ -7,6 +7,8 @@ import HomePage from '../HomePage/HomePage'
 import Feelings from '../Feeling/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
+import ThankYou from '../ThankYou/ThankYou';
 
 function App() {
 
@@ -45,6 +47,8 @@ function App() {
       <Feelings />
       <Understanding />
       <Support />
+      <Comments />
+      <ThankYou />
     </div>
   );
 }
