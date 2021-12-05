@@ -25,7 +25,9 @@ function Feelings (){
         payload: feelings
 // We need to dispatch from the feelings component to Wireframe 2 (understanding)
 // useHistory to navigate to the next dispatch
-    }) }
+        })
+        saveHistory.push('/understanding')   
+    }
         else {
         alert ( 'Error! Please Select a rating between 1 & 5' );
     } 
