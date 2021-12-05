@@ -24,6 +24,11 @@ function Feelings (){
         <h1>A Quick Check In</h1>
         </div>
 
+        <div className = "pageCount">
+            <h5>1 of 4 pages</h5>
+        </div>
+
+
         <div>
         <h1>How are you feeling today?</h1>
         <h4> Please select from 0 to 5 </h4>
