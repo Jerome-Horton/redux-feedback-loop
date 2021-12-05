@@ -1,10 +1,12 @@
 import React from "react";
 import {useState} from 'react';
+import {useDispatch} from 'react';
 
 
 function Feelings (){
     console.log('in Feelings');
 
+    const dispatch = useDispatch;
 // Set State for event
     const [feelings, setFeelings] = useState(0);
 // create handle Button function for next navigation
