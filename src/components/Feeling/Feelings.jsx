@@ -1,12 +1,14 @@
 import React from "react";
 import {useState} from 'react';
-import {useDispatch} from 'react';
+// import useHistory & Dispatch
+import {useDispatch, useHistory} from 'react';
 
 
 function Feelings (){
     console.log('in Feelings');
 
     const dispatch = useDispatch;
+    let saveHistory = useHistory;
 // Set State for event
     const [feelings, setFeelings] = useState(0);
 // create handle Button function for next navigation
@@ -20,6 +22,8 @@ function Feelings (){
     dispatch ({
         type: 'ADD_FEELINGS',
         payload: feelings
+// We need to dispatch from the feelings component to Wireframe 2 (understanding)
+// useHistory to navigate to the next dispatch
     }) }
         else {
         alert ( 'Error! Please Select a rating between 1 & 5' );

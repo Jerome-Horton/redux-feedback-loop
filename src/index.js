@@ -21,10 +21,15 @@ const feelingsReducer = (state = 0, action) =>{
                return state;
         }
 }
-
-
-
 // Create Reducer for Understanding Component
+const understandingReducer = (state = 0, action) =>{
+    switch (action.type) {
+        case 'ADD_UNDERSTANDING':
+            return [...state, action.payload];
+        default:
+           return state;
+    }
+}
 
 // Create Reducer for Support Component
 
@@ -36,7 +41,8 @@ const feelingsReducer = (state = 0, action) =>{
 // Create Store to hold App information
 const storeInstance = createStore(
     combineReducers({
-        feelingsReducer
+        feelingsReducer,
+        understandingReducer
 
     }),
     applyMiddleware(
