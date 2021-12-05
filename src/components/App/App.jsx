@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+// Import Components
+import HomePage from '../HomePage/HomePage'
+
 function App() {
 
   //The 
@@ -30,9 +33,12 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
+        <h1 className='App-title'>Welcome</h1>
+        <h3>Submit Your Feedback</h3>
         <h4>Don't forget it!</h4>
       </header>
+{/* import components in order */}
+      <HomePage />
     </div>
   );
 }
