@@ -1,15 +1,34 @@
 import React from "react";
 import {useState} from 'react';
 
+// import useHistory & Dispatch
+import {useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 
 function Comments (){
     console.log('in Comments');
 
+
+    const dispatch = useDispatch;
+    let saveHistory = useHistory;
+
 // Set State for event
     const [comments, setComments] = useState('');
 // create handle Button function for next navigation
-    // const nextButton (){        
-// }
+    const nextButton = () => {   
+        if(comments === ''){
+            alert('Are you sure?')
+        } else {
+            // We need to dispatch from the comments component to index file.
+    // useHistory to navigate to the next dispatch
+        dispatch({
+            type: 'ADD_COMMENTS',
+            payload: comments
+        })
+    }
+    console.log('SUCCESS!! Comments nextButton works 🕺');
+}
 
 
     return (
@@ -32,7 +51,7 @@ function Comments (){
             placeholder="comments"
             onChange={(event) => setComments(event.target.value)}>
         </input>
-        <button>Next Page ⇨</button>
+        <button onClick={nextButton}>Next Page ⇨</button>
 
     </div>
         </>

@@ -16,7 +16,7 @@ import { Provider } from 'react-redux';
 const feelingsReducer = (state = 0, action) =>{
         switch (action.type) {
             case 'ADD_FEELINGS':
-                return [...state, action.payload];
+                return {...state, feelings: action.payload};
             default:
                return state;
         }
@@ -25,24 +25,32 @@ const feelingsReducer = (state = 0, action) =>{
 const understandingReducer = (state = 0, action) =>{
     switch (action.type) {
         case 'ADD_UNDERSTANDING':
-            return [...state, action.payload];
+            return {...state, understanding: action.payload};
         default:
            return state;
     }
+    
 }
 
 // Create Reducer for Support Component
 const supportReducer = (state = 0, action) =>{
     switch (action.type) {
         case 'ADD_SUPPORT':
-            return [...state, action.payload];
+            return {...state, support: action.payload};
         default:
            return state;
     }
 }
 
 // Create Reducer for Comments Component
-
+const commentsReducer = (state = 0, action) =>{
+    switch (action.type) {
+        case 'ADD_COMMENTS':
+            return {...state, comments: action.payload};
+        default:
+           return state;
+    }
+}
 
 
 
@@ -52,7 +60,8 @@ const storeInstance = createStore(
         // Add Reducers
         feelingsReducer,
         understandingReducer,
-        supportReducer
+        supportReducer,
+        commentsReducer
 
     }),
     applyMiddleware(
