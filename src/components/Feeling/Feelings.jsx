@@ -10,13 +10,23 @@ function Feelings (){
 // Set State for event
     const [feelings, setFeelings] = useState(0);
 // create handle Button function for next navigation
-    // const nextButton (){        
+    const nextButton = () => {        
 // Create conditional statements for input field
-    // if ( feelings = '' )
-    // alert ( Error! Please Select a rating Value )
-    //}
-    // 
-// }
+    if ( feelings === 0 ) {
+        alert('Please SELECT a number between 1-5 to continue')
+    } 
+    else if (feelings > 5){
+        alert('Please choose a number from 1-5 to continue')
+    dispatch ({
+        type: 'ADD_FEELINGS',
+        payload: feelings
+    }) }
+        else {
+        alert ( 'Error! Please Select a rating between 1 & 5' );
+    } 
+    console.log('SUCCESS!! nextButton works 🕺');
+}
+
 
 
     return (
@@ -33,10 +43,9 @@ function Feelings (){
 
         <div>
         <h1>How are you feeling today?</h1>
-        <h4> Please select from 0 to 5 </h4>
-        <p>Zero (0) = The Worst</p>
-        <p>One (1) = Bad</p>
-        <p>Two (2) = Not Bad</p>
+        <h4> Please select from 1 to 5 </h4>
+        <p>One (1) = The Worst</p>
+        <p>Two (2) = Bad</p>
         <p>Three (3) = Okay</p>
         <p>Four (4) = Good</p>
         <p>Five (5) = Excellent</p>
@@ -48,7 +57,7 @@ function Feelings (){
             value={feelings}
             onChange={(event) => setFeelings(event.target.value)}>
         </input>
-        <button>Next Page ⇨</button>
+        <button onClick={nextButton}>Next Page ⇨</button>
 
     </div>
         </>

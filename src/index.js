@@ -13,7 +13,7 @@ import { Provider } from 'react-redux';
 
 // Components Reducers
 // create Reducer for feeling component
-const feelingsReducer = (state = {}, action) =>{
+const feelingsReducer = (state = 0, action) =>{
         switch (action.type) {
             case 'ADD_FEELINGS':
                 return [...state, action.payload];
