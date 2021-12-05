@@ -30,7 +30,7 @@ function Understanding (){
             else {
             alert ( 'Error! Please Select a rating between 1 & 5' );
         } 
-    console.log('SUCCESS!! nextButton works 🕺');
+    console.log('SUCCESS!! Understanding nextButton works 🕺');
 
 }
 
@@ -55,7 +55,7 @@ function Understanding (){
         <p>Three (3) = "So So, needs more practice"</p>
         <p>Four (4) = "Solid, I can explain it"</p>
         <p>Five (5) = "I can teach it to a friend"</p>
-        <input className='input'
+        <input className='App-input'
             type="number"
             min={1}
             max={5}

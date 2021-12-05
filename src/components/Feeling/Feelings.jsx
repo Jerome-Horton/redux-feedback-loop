@@ -1,7 +1,8 @@
 import React from "react";
 import {useState} from 'react';
 // import useHistory & Dispatch
-import {useDispatch, useHistory} from 'react';
+import {useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 
 function Feelings (){
@@ -28,7 +29,7 @@ function Feelings (){
         else {
         alert ( 'Error! Please Select a rating between 1 & 5' );
     } 
-    console.log('SUCCESS!! nextButton works 🕺');
+    console.log('SUCCESS!! Feelings nextButton works 🕺');
 }
 
 
@@ -53,7 +54,7 @@ function Feelings (){
         <p>Three (3) = Okay</p>
         <p>Four (4) = Good</p>
         <p>Five (5) = Excellent</p>
-        <input className='input'
+        <input className='App-input'
             type="number"
             min={1}
             max={5}
