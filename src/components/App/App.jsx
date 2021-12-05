@@ -6,6 +6,7 @@ import './App.css';
 import HomePage from '../HomePage/HomePage'
 import Feelings from '../Feeling/Feelings';
 import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
       <HomePage />
       <Feelings />
       <Understanding />
+      <Support />
     </div>
   );
 }
