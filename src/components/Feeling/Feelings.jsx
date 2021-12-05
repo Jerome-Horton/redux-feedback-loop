@@ -46,7 +46,7 @@ function Feelings (){
             value={feelings}
             onChange={(event) => setFeelings(event.target.value)}>
         </input>
-        <button>Next Page</button>
+        <button>Next Page ⇨</button>
 
     </div>
         </>

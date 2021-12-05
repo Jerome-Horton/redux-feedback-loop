@@ -46,7 +46,7 @@ function Understanding (){
             value={understanding}
             onChange={(event) => setUnderstanding(event.target.value)}>
         </input>
-        <button>Next Page</button>
+        <button>Next Page ⇨</button>
 
     </div>
         </>

@@ -20,7 +20,7 @@ function HomePage (){
         <div>
             <h2>Click the Button to begin.</h2>
 {/* // Button needs onClick functionality */}
-             <button>Start Survey</button>
+             <button>Start Survey ⇨</button>
         </div>
 
     )
