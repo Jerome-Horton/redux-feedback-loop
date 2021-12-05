@@ -55,9 +55,9 @@ function Feelings (){
         <p>Five (5) = Excellent</p>
         <input className='input'
             type="number"
-            min={0}
+            min={1}
             max={5}
-            placeholder='Select 0 to 5'
+            placeholder='Select 1 to 5'
             value={feelings}
             onChange={(event) => setFeelings(event.target.value)}>
         </input>
