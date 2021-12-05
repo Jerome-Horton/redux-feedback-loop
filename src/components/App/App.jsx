@@ -4,6 +4,7 @@ import './App.css';
 
 // Import Components
 import HomePage from '../HomePage/HomePage'
+import Feelings from '../Feeling/Feelings';
 
 function App() {
 
@@ -35,10 +36,11 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Welcome</h1>
         <h3>Submit Your Feedback</h3>
-        <h4>Don't forget it!</h4>
+        {/* <h4>Don't forget it!</h4> */}
       </header>
 {/* import components in order */}
       <HomePage />
+      <Feelings />
     </div>
   );
 }
