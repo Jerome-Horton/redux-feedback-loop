@@ -10,12 +10,34 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 // Import Provider
 import { Provider } from 'react-redux';
-// Create Reducers to connect components
+
+// Components Reducers
+// create Reducer for feeling component
+const feelingsReducer = (state = {}, action) =>{
+        switch (action.type) {
+            case 'ADD_FEELINGS':
+                return [...state, action.payload];
+            default:
+               return state;
+        }
+}
+
+
+
+// Create Reducer for Understanding Component
+
+// Create Reducer for Support Component
+
+// Create Reducer for Comments Component
+
+
+
 
 // Create Store to hold App information
 const storeInstance = createStore(
     combineReducers({
-       
+        feelingsReducer
+
     }),
     applyMiddleware(
         logger),
