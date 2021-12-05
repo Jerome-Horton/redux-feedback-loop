@@ -5,6 +5,7 @@ import './App.css';
 // Import Components
 import HomePage from '../HomePage/HomePage'
 import Feelings from '../Feeling/Feelings';
+import Understanding from '../Understanding/Understanding';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
 {/* import components in order */}
       <HomePage />
       <Feelings />
+      <Understanding />
     </div>
   );
 }
