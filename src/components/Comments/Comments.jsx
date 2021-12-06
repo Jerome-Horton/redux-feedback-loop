@@ -53,6 +53,7 @@ function Comments (){
         <h3>Do you have any additional comments or suggestions?</h3>
 
         <form onSubmit={nextButton}>
+{/* previous page button works smoothly */}
         <button onClick={previousPage}>Previous Page</button>
         <input className='App-input'
             type="text"
