@@ -36,6 +36,12 @@ function Review() {
             console.log("error from the POST /survey", error);
         })
     }
+
+    function previousPage () {
+        saveHistory.push('/Comments')
+}
+
+
     return (
         <div>
             <h1>Review</h1>
@@ -44,6 +50,7 @@ function Review() {
                 <p>Support: {support}</p>
                 <p>Comments: {comments}</p>
             <button onClick={onSubmitButton}>Submit</button>
+            <button onClick={previousPage}>Previous Page</button>
         </div>
 
 

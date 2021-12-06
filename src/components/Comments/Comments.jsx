@@ -33,7 +33,7 @@ function Comments (){
 }
 
         function previousPage () {
-            saveHistory.push('/')
+            saveHistory.push('/Support')
 }
 
 

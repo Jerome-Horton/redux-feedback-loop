@@ -33,7 +33,7 @@ function Support (){
 
 }
         function previousPage () {
-            saveHistory.push('/')
+            saveHistory.push('/Understanding')
 } 
 
     return (
