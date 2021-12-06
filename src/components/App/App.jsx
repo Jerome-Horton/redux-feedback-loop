@@ -9,7 +9,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import ThankYou from '../ThankYou/ThankYou';
-import Review from '../Review/Review'
+import Review from '../Review/Review';
 
 // Import Router, route
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -60,23 +60,23 @@ function App() {
               <HomePage />
         </Route>
 
-        <Route exact path="/feelings">
+        <Route exact path="/Feelings">
               <Feelings />
         </Route>
 
-        <Route exact path="/understanding">
+        <Route exact path="/Understanding">
               <Understanding />
         </Route>
 
-          <Route exact path="/support">
+          <Route exact path="/Support">
               <Support />
           </Route>
                     
-          <Route exact path="/comments">
+          <Route exact path="/Comments">
               <Comments />
           </Route>
 
-          <Route exact path="/review">
+          <Route exact path="/Review">
             <Review/>
           </Route>
 

@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom';
 
 function ThankYou() {
 
+
     const saveHistory = useHistory();
 
     const nextButton = () => {
@@ -22,8 +23,9 @@ function ThankYou() {
                 <h1>Thank you!</h1>
                 <h5>We appreciate your feedback.</h5>
                 <br></br>
+                <form>
                 <button onClick={nextButton}>Leave New Feedback</button>
-
+                </form>
             </div>
         </>
     )

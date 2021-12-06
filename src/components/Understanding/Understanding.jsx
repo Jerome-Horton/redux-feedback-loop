@@ -6,34 +6,40 @@ import {useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 
-function Understanding (){
+function Understanding () {
     console.log('in Understanding');
 
-    const dispatch = useDispatch;
-    let saveHistory = useHistory;
-
-// Set State for event
+    // Set State for event
     const [understanding, setUnderstanding] = useState(0);
+
+    const dispatch = useDispatch();
+    let saveHistory = useHistory();
+
+
 // create handle Button function for next navigation
-    const nextButton = () => {        
+    const nextButton = (event) => { 
+        event.preventDefault()       
         if ( understanding === 0 ) {
             alert('Please SELECT a number between 1-5 to continue')
-        } 
-        else if (understanding > 5){
-            alert('Please choose a number from 1-5 to continue')
+        }        
         dispatch ({
             type: 'ADD_UNDERSTANDING',
             payload: understanding
     // We need to dispatch from the understanding component to Wireframe 3 (Support)
     // useHistory to navigate to the next dispatch
-        }) }
+
+        }) 
+        saveHistory.push('/Support')  
+  
         //     else {
         //     alert ( 'Error! Please Select a rating between 1 & 5' );
         // } 
     console.log('SUCCESS!! Understanding nextButton works 🕺');
 
 }
-
+        function previousPage () {
+            saveHistory.push('/')
+    } 
 
     return (
 
@@ -55,15 +61,17 @@ function Understanding (){
         <p>Three (3) = "So So, needs more practice"</p>
         <p>Four (4) = "Solid, I can explain it"</p>
         <p>Five (5) = "I can teach it to a friend"</p>
+        <form onSubmit={nextButton}>
+        <button onClick={previousPage}>Previous Page</button>
         <input className='App-input'
             type="number"
             min={1}
             max={5}
             placeholder='Select 1 to 5'
             value={understanding}
-            onChange={(event) => setUnderstanding(event.target.value)}>
-        </input>
-        <button onClick={nextButton}>Next Page ⇨</button>
+            onChange={(event) => setUnderstanding(event.target.value)}/>
+        <button>Next Page ⇨</button>
+        </form>
 
     </div>
         </>

@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 
 function Feelings (){
-    console.log('in Feelings');
+
 
     const dispatch = useDispatch();
     let saveHistory = useHistory();
@@ -16,26 +16,30 @@ function Feelings (){
 
 // create handle Button function for next navigation
     const nextButton = (event) => {   
-        event.preventDefault();     
+        event.preventDefault()
 // Create conditional statements for input field
-    if ( feelings === 0 ) {
-        alert('Please SELECT a number between 1-5 to continue')
-    } 
-    else if (feelings > 5){
-        alert('Please choose a number from 1-5 to continue')
+    // if ( feelings === 0 ) {
+    //     alert('Please SELECT a number between 1-5 to continue')
+    // } 
+    // else
     dispatch ({
         type: 'ADD_FEELINGS',
         payload: feelings
 // We need to dispatch from the feelings component to Wireframe 2 (understanding)
 // useHistory to navigate to the next dispatch
         })
-        saveHistory.push('/understanding')   
-    }
+        saveHistory.push('/Understanding')   
+    // }
     //     else {
     //     alert ( 'Error! Please Select a rating between 1 & 5' );
     // } 
     console.log('SUCCESS!! Feelings nextButton works 🕺');
+
 }
+
+    function previousPage () {
+        saveHistory.push('/')
+    }   
 
 
 
@@ -61,20 +65,18 @@ function Feelings (){
         <p>Four (4) = Good</p>
         <p>Five (5) = Excellent</p>
         
-        
+        <form onSubmit={nextButton}>
+        <button onClick={previousPage}>Previous Page</button>
         <input className='App-input'
             type="number"
             min={1}
             max={5}
             placeholder='Select 1 to 5'
             value={feelings}
-            onChange={(event) => setFeelings(event.target.value)}>
-        </input>
-        <form>
-        <button 
-            value={feelings}
-            onClick={nextButton}
-            onChange={(event) => setFeelings(event.target.value)}>Next Page ⇨</button>
+            onChange={(event) => {setFeelings(event.target.value)}}/>
+        
+        <button>
+            Next Page ⇨</button>
         </form>
 
         </div>

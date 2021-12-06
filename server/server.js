@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-app.use( '/api/survey', surveyRouter );
+app.use( '/survey', surveyRouter );
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

@@ -15,12 +15,11 @@ function Support (){
 // Set State for event
     const [support, setSupport] = useState(0);
 // create handle Button function for next navigation
-    const nextButton = () => {        
-        if ( support === 0 ) {
-            alert('Please SELECT a number between 1-5 to continue')
-        } 
-        else if (support > 5){
-            alert('Please choose a number from 1-5 to continue')
+    const nextButton = (event) => {   
+        event.preventDefault()     
+        // if ( support === 0 ) {
+        //     alert('Please SELECT a number between 1-5 to continue')
+        // } 
         dispatch ({
             type: 'ADD_SUPPORT',
             payload: support
@@ -28,15 +27,14 @@ function Support (){
     // useHistory to navigate to the next dispatch
             
         }) 
-        saveHistory.push('/comments')
-    }
-            else {
-            alert ( 'Error! Please Select a rating between 1 & 5' );
-        } 
+        saveHistory.push('/Comments')
+
     console.log('SUCCESS!! Support nextButton works 🕺');
 
 }
-
+        function previousPage () {
+            saveHistory.push('/')
+} 
 
     return (
 
@@ -58,6 +56,9 @@ function Support (){
         <p>Two (3) = "Neutral"</p>
         <p>Three (4) = "Agree"</p>
         <p>Four (5) = "Strongly Agree"</p>
+
+        <form onSubmit={nextButton}>
+        <button onClick={previousPage}>Previous Page</button>
         <input className='App-input'
             type="number"
             min={0}
@@ -66,7 +67,8 @@ function Support (){
             value={support}
             onChange={(event) => setSupport(event.target.value)}>
         </input>
-        <button onClick={nextButton}>Next Page ⇨</button>
+        <button>Next Page ⇨</button>
+        </form>
 
     </div>
         </>

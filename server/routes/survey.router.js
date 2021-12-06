@@ -1,6 +1,12 @@
 const express = require('express')
 const pool = require('../modules/pool')
 const router = express.Router();
+const pg = require('pg');
+const Pool = pg.Pool;
+const pool = new Pool ({
+    host: 'localhost',
+    database: 'prime_feedback'
+})
 
 
 //GET route
@@ -23,8 +29,8 @@ router.post('/', (req,res) => {
        const sqlQuery = `INSERT INTO "feedback"
                         ("feeling", "understanding", "support", "comments")
                       VALUES
-                         ($1, $2, $3, $4)`;
-        params = [
+                         ($1, $2, $3, $4);`;
+        let queryText = [
 
                 survey.feeling,
                 survey.understanding,
@@ -32,12 +38,13 @@ router.post('/', (req,res) => {
                 survey.comments
 
                     ]
-        pool.query(sqlQuery, params)
-            .then((result) => {
+        pool.query(sqlQuery, queryText)
+            .then((dbResult) => {
+                console.log('insert success', dbResult)
                 res.sendStatus(201);
         })
-            .catch((error) => {
-                console.log('POST /api/survey Error:', error);
+            .catch((dbErr) => {
+                console.log('POST /api/survey Error:', dbErr);
                     res.sendStatus(500);
         });
         

@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { useState } from 'react';
 
 // import dispatch
@@ -15,25 +14,6 @@ function HomePage (){
 // Establish useState
         const  [feedback, setFeedback] = useState('');
 
-//         useEffect (() => {
-//             console.log("in useEffect")
-//             fetchFeedback();
-//         }, []);
-
-//   const fetchFeedback = () => {
-//     console.log('in fetchFeedback', fetchFeedback)
-//     axios({
-//         method: "GET",
-//         url: "/api/survey"
-//     })
-//       .then((response) => {
-//           // console.log("In GET response:", response.data);
-//       })
-//       .catch((error) => {
-//           console.log("/api/survey GET error:", error);
-//       });
-//   }
-
 // Create onClick function to go to next section of Survey
     const startButton = (event) => {
         event.preventDefault()
@@ -44,7 +24,7 @@ function HomePage (){
             type: 'START_FEEDBACK'
             // payload: home
     })
-// Also Implement useHistory
+//  Also Implement useHistory
     saveHistory.push('/feelings')  
 }
 

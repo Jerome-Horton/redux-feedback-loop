@@ -16,7 +16,7 @@ import { Provider } from 'react-redux';
 const feelingsReducer = (state = 0, action) =>{
         switch (action.type) {
             case 'ADD_FEELINGS':
-                return [...state, action.payload];
+                return action.payload;
             default:
                return state;
         }
@@ -25,7 +25,7 @@ const feelingsReducer = (state = 0, action) =>{
 const understandingReducer = (state = 0, action) =>{
     switch (action.type) {
         case 'ADD_UNDERSTANDING':
-            return [...state, action.payload];
+            return action.payload;
         default:
            return state;
     }
@@ -36,7 +36,7 @@ const understandingReducer = (state = 0, action) =>{
 const supportReducer = (state = 0, action) =>{
     switch (action.type) {
         case 'ADD_SUPPORT':
-            return [...state, action.payload]
+            return action.payload
         default:
            return state;
     }
@@ -46,7 +46,7 @@ const supportReducer = (state = 0, action) =>{
 const commentsReducer = (state = 0, action) =>{
     switch (action.type) {
         case 'ADD_COMMENTS':
-            return [...state, action.payload];
+            return action.payload;
         default:
            return state;
     }

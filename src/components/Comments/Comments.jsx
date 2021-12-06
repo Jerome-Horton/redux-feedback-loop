@@ -16,7 +16,8 @@ function Comments (){
 // Set State for event
     const [comments, setComments] = useState('');
 // create handle Button function for next navigation
-    const nextButton = () => {   
+    const nextButton = (event) => {  
+        event.preventDefault()
         if(comments === ''){
             alert('Are you sure?')
         } else {
@@ -26,9 +27,13 @@ function Comments (){
             type: 'ADD_COMMENTS',
             payload: comments
         })
-        saveHistory.push('/review')
+        saveHistory.push('/Review')
     }
     console.log('SUCCESS!! Comments nextButton works 🕺');
+}
+
+        function previousPage () {
+            saveHistory.push('/')
 }
 
 
@@ -46,6 +51,9 @@ function Comments (){
 
         <div>
         <h3>Do you have any additional comments or suggestions?</h3>
+
+        <form onSubmit={nextButton}>
+        <button onClick={previousPage}>Previous Page</button>
         <input className='App-input'
             type="text"
             value={comments}
@@ -53,6 +61,7 @@ function Comments (){
             onChange={(event) => setComments(event.target.value)}>
         </input>
         <button onClick={nextButton}>Next Page ⇨</button>
+        </form>
 
     </div>
         </>
