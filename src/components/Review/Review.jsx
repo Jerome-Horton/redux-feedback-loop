@@ -16,8 +16,8 @@ function Review() {
 
     let saveHistory = useHistory();
 
-    function onSubmitButton() {
-        console.log('in submit Button', onSubmitButton);
+    function onSubmitButton(event) {
+        event.preventDefault();
         //here the data is being sent to the DB through axios
         axios({
             method: "POST",
@@ -30,11 +30,11 @@ function Review() {
             },
         }).then((response) => {
             console.log('in POST /route', response);
-            //make sure history went to the next page 
-            saveHistory.push('/ThankYou')
         }).catch((error) => {
             console.log("error from the POST /survey", error);
         })
+        //make sure history went to the next page 
+        saveHistory.push('/ThankYou')
     }
 
     function previousPage () {
@@ -45,12 +45,14 @@ function Review() {
     return (
         <div>
             <h1>Review</h1>
+            <form onSubmit={onSubmitButton}>
                 <p>Feeling: {feeling}</p>
                 <p>Understanding:{understanding}</p>
                 <p>Support: {support}</p>
                 <p>Comments: {comments}</p>
-            <button onClick={onSubmitButton}>Submit</button>
+            <button>Submit</button>
             <button onClick={previousPage}>Previous Page</button>
+            </form>
         </div>
 
 
