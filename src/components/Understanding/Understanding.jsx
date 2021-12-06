@@ -27,9 +27,9 @@ function Understanding (){
     // We need to dispatch from the understanding component to Wireframe 3 (Support)
     // useHistory to navigate to the next dispatch
         }) }
-            else {
-            alert ( 'Error! Please Select a rating between 1 & 5' );
-        } 
+        //     else {
+        //     alert ( 'Error! Please Select a rating between 1 & 5' );
+        // } 
     console.log('SUCCESS!! Understanding nextButton works 🕺');
 
 }

@@ -9,41 +9,42 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import ThankYou from '../ThankYou/ThankYou';
+import Review from '../Review/Review'
 
 // Import Router, route
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // Import dispatch
-import {useDispatch} from 'react-redux';
+// import {useDispatch} from 'react-redux';
 
 
 function App() {
 
-  const dispatch = useDispatch;
-  //The 
-    useEffect (() => {
-      console.log("in useEffect")
-      fetchFeedback();
-  }, []);
+  // const dispatch = useDispatch;
+  // //The 
+  //   useEffect (() => {
+  //     console.log("in useEffect")
+  //     fetchFeedback();
+  // }, []);
 
-  function fetchFeedback () {
-    console.log('in fetchFeedback', fetchFeedback)
+  // const fetchFeedback = () => {
+  //   console.log('in fetchFeedback', fetchFeedback)
 
-    axios({
-        method: "GET",
-        url: "/api/survey"
-    })
-      .then((response) => {
-          // console.log("In GET response:", response.data);
-          dispatch({
-            type: 'SET_SURVEY',
-            payload: response.data
-          })
-      })
-      .catch((error) => {
-          console.log("/api/survey GET error:", error);
-      });
+  //   axios({
+  //       method: "GET",
+  //       url: "/api/survey"
+  //   })
+  //     .then((response) => {
+  //         // console.log("In GET response:", response.data);
+  //         dispatch({
+  //           type: 'SET_SURVEY',
+  //           payload: feedback
+  //         })
+  //     })
+  //     .catch((error) => {
+  //         console.log("/api/survey GET error:", error);
+  //     });
 
-  }
+  // }
 
 
   return (
@@ -63,19 +64,23 @@ function App() {
               <Feelings />
         </Route>
 
-        <Route exact path="/feelings">
+        <Route exact path="/understanding">
               <Understanding />
         </Route>
 
           <Route exact path="/support">
               <Support />
           </Route>
-          
+                    
           <Route exact path="/comments">
               <Comments />
           </Route>
 
-          <Route exact path="/">
+          <Route exact path="/review">
+            <Review/>
+          </Route>
+
+          <Route exact path="/ThankYou">
               <ThankYou />
           </Route>
       </Router>

@@ -8,12 +8,15 @@ import { useHistory } from 'react-router-dom';
 function Feelings (){
     console.log('in Feelings');
 
-    const dispatch = useDispatch;
-    let saveHistory = useHistory;
+    const dispatch = useDispatch();
+    let saveHistory = useHistory();
 // Set State for event
     const [feelings, setFeelings] = useState(0);
+
+
 // create handle Button function for next navigation
-    const nextButton = () => {        
+    const nextButton = (event) => {   
+        event.preventDefault();     
 // Create conditional statements for input field
     if ( feelings === 0 ) {
         alert('Please SELECT a number between 1-5 to continue')
@@ -28,9 +31,9 @@ function Feelings (){
         })
         saveHistory.push('/understanding')   
     }
-        else {
-        alert ( 'Error! Please Select a rating between 1 & 5' );
-    } 
+    //     else {
+    //     alert ( 'Error! Please Select a rating between 1 & 5' );
+    // } 
     console.log('SUCCESS!! Feelings nextButton works 🕺');
 }
 
@@ -49,6 +52,7 @@ function Feelings (){
 
 
         <div>
+
         <h1>How are you feeling today?</h1>
         <h4> Please select from 1 to 5 </h4>
         <p>One (1) = The Worst</p>
@@ -56,6 +60,8 @@ function Feelings (){
         <p>Three (3) = Okay</p>
         <p>Four (4) = Good</p>
         <p>Five (5) = Excellent</p>
+        
+        
         <input className='App-input'
             type="number"
             min={1}
@@ -64,9 +70,14 @@ function Feelings (){
             value={feelings}
             onChange={(event) => setFeelings(event.target.value)}>
         </input>
-        <button onClick={nextButton}>Next Page ⇨</button>
+        <form>
+        <button 
+            value={feelings}
+            onClick={nextButton}
+            onChange={(event) => setFeelings(event.target.value)}>Next Page ⇨</button>
+        </form>
 
-    </div>
+        </div>
         </>
 
     )

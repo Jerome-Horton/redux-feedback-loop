@@ -9,8 +9,8 @@ import { useHistory } from 'react-router-dom';
 function Support (){
     console.log('in Support');
 
-    const dispatch = useDispatch;
-    let saveHistory = useHistory;
+    const dispatch = useDispatch();
+    const saveHistory = useHistory();
 
 // Set State for event
     const [support, setSupport] = useState(0);
@@ -26,7 +26,10 @@ function Support (){
             payload: support
     // We need to dispatch from the support component to Wireframe 4 (Comments)
     // useHistory to navigate to the next dispatch
-        }) }
+            
+        }) 
+        saveHistory.push('/comments')
+    }
             else {
             alert ( 'Error! Please Select a rating between 1 & 5' );
         } 

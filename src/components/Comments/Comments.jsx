@@ -10,8 +10,8 @@ function Comments (){
     console.log('in Comments');
 
 
-    const dispatch = useDispatch;
-    let saveHistory = useHistory;
+    const dispatch = useDispatch();
+    let saveHistory = useHistory();
 
 // Set State for event
     const [comments, setComments] = useState('');
@@ -26,6 +26,7 @@ function Comments (){
             type: 'ADD_COMMENTS',
             payload: comments
         })
+        saveHistory.push('/review')
     }
     console.log('SUCCESS!! Comments nextButton works 🕺');
 }
