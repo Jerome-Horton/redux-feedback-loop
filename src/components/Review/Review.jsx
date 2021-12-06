@@ -23,10 +23,10 @@ function Review() {
             method: "POST",
             url: '/survey',
             data: {
-                feeling,
-                comments,
-                support,
-                understanding
+                feeling: feeling,
+                understanding: understanding,
+                support: support,
+                comments:comments
             },
         }).then((response) => {
             console.log('in POST /route', response);
